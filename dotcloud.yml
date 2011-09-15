@@ -1,0 +1,7 @@
+tilestream:
+  type: nodejs
+  requirements:
+    - tilestream
+  environment:
+    mbtiles:
+      - http://a.tiles.mapbox.com/mapbox/download/haiti-terrain-grey.mbtiles

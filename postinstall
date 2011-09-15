@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+import json
+import os
+
+DIR = os.path.expanduser('~/Documents/MapBox/tiles')
+if not os.path.isdir(DIR):
+    os.makedirs(DIR)
+env = json.load(open(os.path.expanduser('~/environment.json')))
+mbtiles = env.get('mbtiles',[])
+for mbtile in mbtiles:
+    filename = os.path.basename(mbtile)
+    if os.path.isfile(os.path.join(DIR, filename)):
+        print '{0} already exists, skipping download.'.format(filename)
+        continue
+    os.system('curl --output {DIR}/{filename} {mbtile}'.format(**locals()))
+
