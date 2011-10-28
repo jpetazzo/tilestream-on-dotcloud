@@ -4,4 +4,4 @@ tilestream:
     - tilestream
   environment:
     mbtiles:
-      - http://a.tiles.mapbox.com/mapbox/download/haiti-terrain-grey.mbtiles
+      - http://a.tiles.mapbox.com/v2/mapbox.haiti-terrain-grey.mbtiles
