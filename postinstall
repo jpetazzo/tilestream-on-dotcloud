@@ -9,6 +9,9 @@ env = json.load(open(os.path.expanduser('~/environment.json')))
 mbtiles = env.get('mbtiles',[])
 for mbtile in mbtiles:
     filename = os.path.basename(mbtile)
+    if filename.endswith('.mbtiles'):
+        filename = filename[:-len('.mbtiles')]
+    filename = filename.replace('.','_') + '.mbtiles'
     if os.path.isfile(os.path.join(DIR, filename)):
         print '{0} already exists, skipping download.'.format(filename)
         continue
